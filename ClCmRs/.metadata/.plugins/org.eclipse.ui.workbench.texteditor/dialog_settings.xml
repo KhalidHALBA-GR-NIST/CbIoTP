@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="future" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="future"/>
+			<item value="handle"/>
+			<item value="evaluate"/>
+			<item value="AsyncResult"/>
+			<item value="client"/>
+			<item value="resultHandler"/>
+			<item value="depl"/>
+			<item value="deploy"/>
+			<item value="vertx"/>
+			<item value="deplo"/>
+			<item value="ar"/>
+			<item value="products"/>
+			<item value="origin"/>
+			<item value="Origin"/>
+			<item value="whisky"/>
+		</list>
+		<list key="replacehistory">
+			<item value="CapMap"/>
+			<item value="location"/>
+			<item value="Location"/>
+			<item value="capability"/>
+			<item value="Capability"/>
+			<item value="192.168.1.240:3001"/>
+			<item value="temperature"/>
+			<item value="192.168.1.137:8675"/>
+			<item value="lamp brightness"/>
+			<item value="capabilities"/>
+			<item value="cap"/>
+			<item value="bapability"/>
+			<item value="Capabilities"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="290" key="DIALOG_WIDTH"/>
+		<item value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont" key="DIALOG_FONT_NAME"/>
+		<item value="409" key="DIALOG_HEIGHT"/>
+		<item value="-577" key="DIALOG_X_ORIGIN"/>
+		<item value="128" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

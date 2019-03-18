@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS `Table1.interaction` (entryId INTEGER IDENTITY, ID18B VARCHAR(200), DataField varchar(200))

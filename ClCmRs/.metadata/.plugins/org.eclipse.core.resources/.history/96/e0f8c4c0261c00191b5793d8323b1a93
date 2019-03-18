@@ -1,0 +1,21 @@
+package  khalid.app1;
+
+
+
+import com.jayway.restassured.RestAssured;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+
+public class MyRestIT {
+
+  @BeforeClass
+  public static void configureRestAssured() {
+    RestAssured.baseURI = "http://localhost";
+    RestAssured.port = Integer.getInteger("http.port", 8080);
+  }
+
+  @AfterClass
+  public static void unconfigureRestAssured() {
+    RestAssured.reset();
+  }
+}

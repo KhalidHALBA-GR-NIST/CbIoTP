@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;io.vertx.workshop.common&apos; to &apos;referenceApp/src/main/java&apos;&#x0A;- Original project: &apos;vertx-workshop-common&apos;&#x0A;- Destination element: &apos;referenceApp/src/main/java&apos;&#x0A;- Original element: &apos;vertx-workshop-common/src/main/java/io.vertx.workshop.common&apos;" description="Copy package" destination="=referenceApp/src\/main\/java" element1="/src\/main\/java&lt;io.vertx.workshop.common" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1548236117745" version="1.0"/>
+</session>

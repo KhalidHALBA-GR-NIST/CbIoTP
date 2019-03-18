@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IoT Capability Platform</title>
+
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container" role="main">
+    <div class="jumbotron">
+        <h1>IoT Capability Manager</h1>
+
+        <p>List of up and running resources</p>
+    </div>
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>My Capabilities</h1>
+                <button class="pull-right btn btn-primary product-add" data-action="add" data-toggle="modal"
+                        data-target="#productModal">
+                    <span class="glyphicon glyphicon-plus"></span> Add a new capability
+                </button>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody id="content">
+                    <!-- filled using Ajax -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        load();
+        initModal();
+    });
+    function create(name, location) {
+        $.post("/api/capabilities", JSON.stringify({name: name, location: location}), function () {
+            load();
+        }, "json");
+    }
+    function remove(id) {
+        $.ajax({
+            method: "DELETE",
+            url: "/api/capabilities/" + id
+        }).done(function () {
+            load();
+        });
+    }
+    function update(id, name, location) {
+        $.ajax({
+            method: "PUT",
+            url: "/api/capabilities/" + id,
+            data: JSON.stringify({name: name, location: location})
+        }).done(function () {
+            load();
+        });
+    }
+    function load() {
+        $("#content").children().remove();
+        $.getJSON("/api/capabilities", function (data) {
+            $.each(data, function (key, val) {
+                $("<tr><td>" + val.id + "</td><td>" + val.name + "</td><td>" + val.location + "</td>" +
+                      
+                        "<td>" +
+                        
+                            "<button data-action='edit' title='send a spec' class='btn btn-info btn-sm product-edit' " +
+                        
+                        "data-toggle='modal' " +
+                        "data-target='#productModal' " +
+                        "data-name='" + val.name + "' " +
+                        "data-location='" + val.location + "' " +
+                        "data-id='" + val.id + "'>" +
+                        "<span class='glyphicon glyphicon-time'></span>" +
+                        "</button>" +
+                        "&nbsp;" +
+                        
+                        "<button class='btn  btn-success btn-sm product-delete' title='Access Resource' data-id='" + val.id + "'>" +
+                        
+                            "   <span class='glyphicon glyphicon-globe'></span>" +
+                        "</button>" +
+                        "&nbsp;" +
+                        
+                        "<button title='Delete Capability' class='btn btn-danger btn-sm product-delete' data-id='" + val.id + "'>" +
+                        
+                            "<span class='glyphicon glyphicon-minus'></span>" +
+                        "</button>" +
+                        "</td>" +
+                        "</tr>").appendTo("#content");
+            });
+            initCallbacks();
+        });
+    }
+    function initCallbacks() {
+        $(".product-delete").unbind().click(function() {
+           var id = $(this).data("id");
+           remove(id);
+        });
+    }
+    function initModal() {
+        $("#productModal").on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var action = button.data('action');
+            var id = button.data('id');
+            var productAction = $("#productAction");
+            productAction.unbind();
+            var modal = $(this);
+            if (action === "add") {
+                modal.find('.modal-title').text("Add a capability");
+                modal.find('#product-name').val("");
+                modal.find('#product-location').val("");
+                productAction.click(function () {
+                    create($("#product-name").val(), $("#product-location").val());
+                    $('#productModal').modal('toggle');
+                });
+            } else {
+                modal.find('.modal-title').text("Edit a capability");
+                modal.find('#product-name').val(button.data("name"));
+                modal.find('#product-location').val(button.data("location"));
+                productAction.click(function () {
+                    update(id, $("#product-name").val(), $("#product-location").val());
+                    $('#productModal').modal('toggle');
+                });
+            }
+        })
+    }
+</script>
+<div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <h4 class="modal-title" id="productModalTitle">Add a capability</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="product-name" class="control-label">Name:</label>
+                        <input type="text" class="form-control" id="product-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-location" class="control-label">Location:</label>
+                        <input type="text" class="form-control" id="product-location">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" id="productAction" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

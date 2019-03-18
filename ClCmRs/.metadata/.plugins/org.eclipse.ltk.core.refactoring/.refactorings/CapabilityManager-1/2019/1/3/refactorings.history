@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;IoTCapabilityPlatform.CapabilityManager&apos; to &apos;CapabilityManager/src/main/java&apos;&#x0A;- Original project: &apos;CapabilityManager-1&apos;&#x0A;- Destination element: &apos;CapabilityManager/src/main/java&apos;&#x0A;- Original element: &apos;CapabilityManager-1/src/main/java/IoTCapabilityPlatform.CapabilityManager&apos;" description="Copy package" destination="=CapabilityManager/src\/main\/java" element1="/src\/main\/java&lt;IoTCapabilityPlatform.CapabilityManager" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1547827492714" version="1.0"/>
+</session>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="io.vertx.ext.web.Router"/>
+<fullyQualifiedTypeName name="io.vertx.core.http.HttpServerResponse"/>
+<fullyQualifiedTypeName name="io.vertx.ext.web.handler.StaticHandler"/>
+<fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="io.vertx.ext.web.RoutingContext"/>
+<fullyQualifiedTypeName name="io.vertx.ext.web.handler.BodyHandler"/>
+<fullyQualifiedTypeName name="io.vertx.core.json.Json"/>
+<fullyQualifiedTypeName name="io.vertx.core.json.JsonObject"/>
+<fullyQualifiedTypeName name="io.vertx.servicediscovery.ServiceDiscovery"/>
+<fullyQualifiedTypeName name="io.vertx.servicediscovery.types.HttpEndpoint"/>
+<fullyQualifiedTypeName name="io.vertx.core.Handler"/>
+<fullyQualifiedTypeName name="io.vertx.core.AsyncResult"/>
+<fullyQualifiedTypeName name="io.vertx.core.http.HttpClient"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="io.vertx.servicediscovery.ServiceReference"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="io.vertx.servicediscovery.Record"/>
+<fullyQualifiedTypeName name="io.vertx.core.eventbus.Message"/>
+<fullyQualifiedTypeName name="io.vertx.serviceproxy.ServiceException"/>
+<fullyQualifiedTypeName name="io.vertx.ext.web.client.WebClient"/>
+<fullyQualifiedTypeName name="io.vertx.servicediscovery.ServiceDiscoveryOptions"/>
+<fullyQualifiedTypeName name="alpha.MicroServiceVerticle"/>
+</qualifiedTypeNameHistroy>
